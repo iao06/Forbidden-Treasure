@@ -77,6 +77,18 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         isOnGround = true;
+        if (col.gameObject.tag == "Moving Platform")
+        {
+            transform.parent = col.transform;
+        }
+    }
+
+    private void OnCollisionExit2D (Collision2D col)
+    {
+        if (col.gameObject.tag == "Moving Platform")
+        {
+            transform.parent = null;
+        }
     }
 
 }
