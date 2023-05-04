@@ -31,7 +31,7 @@ public class ChestInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision)
+        if(collision && !chestInteract)
         {
             chestInteract = true;
             ScoreTextScipt.coinAmount += 50;
