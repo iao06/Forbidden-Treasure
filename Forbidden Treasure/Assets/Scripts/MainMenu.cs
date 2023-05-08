@@ -9,12 +9,14 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("CurrentLives", dfltLives);   
+        PlayerPrefs.SetInt("CurrentLives", dfltLives);
+
     }
     public void PlayGame()
     {
         SceneManager.LoadScene(0);
     }
+
 
     public void ExitGame()
     {
