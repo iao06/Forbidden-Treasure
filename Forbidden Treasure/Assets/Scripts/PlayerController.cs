@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     // the player's rigidbody
     public Rigidbody2D rb;
+    Animator anim;
     Vector2 move;
     // varible to see if the place is on the ground or not
     public bool isOnGround;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -60,6 +61,11 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("Attack"); 
+        } 
 
     }
 
