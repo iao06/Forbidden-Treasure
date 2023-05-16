@@ -62,11 +62,6 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            anim.SetTrigger("Attack"); 
-        } 
-
     }
 
     // the logic for the character flipping direction
