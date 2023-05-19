@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 646987661}
   - component: {fileID: 646987656}
   - component: {fileID: 1007298861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e512b978dbc00943a848b3a6b71c0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   currentHealth: 8
   maxHealth: 10
 --- !u!114 &1007298861
@@ -238,5 +239,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  bossLayers:
+    serializedVersion: 2
+    m_Bits: 128
   attackDamage: 40
   attackRate: 2

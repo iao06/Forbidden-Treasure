@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UIElements;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public Animator anim;
     public float currentHealth;
     public float maxHealth;
     // Start is called before the first frame update
@@ -18,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Debug.Log("YOU DIED");
+            anim.SetBool("isDead", true);
             
         }
     }
