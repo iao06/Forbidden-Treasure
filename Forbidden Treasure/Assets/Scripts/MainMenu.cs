@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int dfltLives;
-
-    private void Start()
-    {
-        PlayerPrefs.SetInt("CurrentLives", dfltLives);
-
-    }
     public void PlayGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
 
