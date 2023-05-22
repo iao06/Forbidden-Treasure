@@ -847,6 +847,7 @@ MonoBehaviour:
   cam: {fileID: 581006928}
   player: {fileID: 1663137221}
   parallaxEffect: 1
+  yoffset: -2
 --- !u!212 &1166663094
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -949,6 +950,7 @@ MonoBehaviour:
   cam: {fileID: 581006928}
   player: {fileID: 1663137221}
   parallaxEffect: 0.5
+  yoffset: -2
 --- !u!212 &1279331241
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1308,6 +1310,7 @@ MonoBehaviour:
   cam: {fileID: 581006928}
   player: {fileID: 1663137221}
   parallaxEffect: 0.7
+  yoffset: -2
 --- !u!212 &1764662255
 SpriteRenderer:
   m_ObjectHideFlags: 0
