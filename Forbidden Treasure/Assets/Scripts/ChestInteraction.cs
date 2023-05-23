@@ -12,7 +12,6 @@ public class ChestInteraction : MonoBehaviour
     void Start()
     {
         animr = gameObject.GetComponent<Animator>();
-        chestInteract = false;
     }
 
     // Update is called once per frame

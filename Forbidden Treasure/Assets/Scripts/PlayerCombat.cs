@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public LayerMask bossLayers;
+    public LayerMask secretLayers;
 
     public int attackDamage = 40;
 
@@ -39,6 +40,7 @@ public class PlayerCombat : MonoBehaviour
         // detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] hitBosses = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, bossLayers);
+        Collider2D[] hitSecrets = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, secretLayers);
         // damage them
         foreach(Collider2D enemy in hitEnemies)
         {
@@ -48,6 +50,11 @@ public class PlayerCombat : MonoBehaviour
         foreach(Collider2D boss in hitBosses)
         {
             boss.GetComponent<BossHealth>().TakeDamage(attackDamage);
+        }
+
+        foreach(Collider2D secret in hitSecrets)
+        {
+            secret.GetComponent<Secrets>().SecretFound();
         }
     }
 
