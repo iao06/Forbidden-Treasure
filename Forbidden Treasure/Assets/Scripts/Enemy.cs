@@ -38,4 +38,5 @@ public class Enemy : MonoBehaviour
     {
         plyrH.TakeDamage(1);
     }
+
 }
