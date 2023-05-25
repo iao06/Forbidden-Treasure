@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -29,23 +30,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // the input for the left/right movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        // the left/right movement
-        rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
-
-
-
-        // flips the player to the direction they are facing
-        if (horizontalInput > 0 && !facingRight)
+        if (!anim.GetBool("isDead"))
         {
-            Flip();
-        }
+            // the input for the left/right movement
+            float horizontalInput = Input.GetAxis("Horizontal");
+            // the left/right movement
+            rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
 
-        if (horizontalInput < 0 && facingRight)
-        {
-            Flip();
+
+
+            // flips the player to the direction they are facing
+            if (horizontalInput > 0 && !facingRight)
+            {
+                Flip();
+            }
+
+            if (horizontalInput < 0 && facingRight)
+            {
+                Flip();
+            }
         }
+        
 
 
     }
@@ -55,12 +60,13 @@ public class PlayerController : MonoBehaviour
         move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         // the input for the jump
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !anim.GetBool("isDead"))
         {
             // the jump
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isOnGround = false;
         }
+
 
     }
 
