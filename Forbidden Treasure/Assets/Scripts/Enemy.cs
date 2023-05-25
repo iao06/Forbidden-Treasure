@@ -6,13 +6,15 @@ public class Enemy : MonoBehaviour
 {
     PlayerHealth plyrH;
 
-    public Transform player;
+    Transform player;
 
     public bool isFlipped = false;
 
     private void Start()
     {
         plyrH = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     public void LookAtPlayer()

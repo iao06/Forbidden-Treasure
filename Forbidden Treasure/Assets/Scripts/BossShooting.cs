@@ -23,7 +23,7 @@ public class BossShooting : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < 10 && anim.GetBool("isPhase3"))
+        if (distance < 10 && anim.GetBool("isPhase3") && !anim.GetBool("isDead"))
         {
             timer += Time.deltaTime;
 

@@ -28,7 +28,7 @@ public class BossChase : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, new Vector2(target.x, rb.position.y), speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+        if (Vector2.Distance(player.position, rb.position) <= attackRange && !animator.GetBool("isDead"))
         {
             animator.SetTrigger("Attack");
         }
